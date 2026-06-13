@@ -1,0 +1,19 @@
+project:
+  name: caiso-load-forecasting
+  region: CAISO
+  target_variable: hourly_load_mw
+
+forecast:
+  granularity: hourly
+  horizon: t_plus_1h
+  extension_horizon: t_plus_24h
+
+evaluation:
+  split_type: time_based
+  metrics: [MAE, RMSE, MAPE]
+
+paths:
+  raw_data: data/raw
+  interim_data: data/interim
+  processed_data: data/processed
+  reports: reports
